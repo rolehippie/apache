@@ -1,0 +1,11 @@
+[Unit]
+Description=Prometheus exporter for Apache
+After=network-online.target
+
+[Service]
+Restart=always
+EnvironmentFile=/etc/default/apache-exporter
+ExecStart=/usr/bin/apache-exporter $ARGS
+
+[Install]
+WantedBy=multi-user.target

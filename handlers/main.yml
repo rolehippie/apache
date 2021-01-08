@@ -1,0 +1,21 @@
+# Standards: 0.1
+---
+- name: Reload apache
+  systemd:
+    name: apache2
+    state: reloaded
+    daemon_reload: True
+
+- name: Restart apache
+  systemd:
+    name: apache2
+    state: restarted
+    daemon_reload: True
+
+- name: Restart apache-exporter
+  systemd:
+    name: apache-exporter
+    state: restarted
+    daemon_reload: yes
+
+...

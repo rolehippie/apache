@@ -1,0 +1,86 @@
+# Standards: 0.1
+---
+- name: Check existing install
+  register: apache_exporter_version_check
+  failed_when: False
+  changed_when: False
+  check_mode: False
+  command: /usr/bin/apache-exporter --version
+  tags:
+    - apache
+    - apache-exporter
+
+- name: Fact version change
+  set_fact:
+    apache_exporter_version_changed: "{{ apache_exporter_version_check.rc != 0 or (apache_exporter_version_check.stdout_lines is defined and apache_exporter_version not in apache_exporter_version_check.stdout_lines[0]) | bool }}"
+  tags:
+    - apache
+    - apache-exporter
+
+- name: Download release tarball
+  when: apache_exporter_version_changed
+  unarchive:
+    src: "{{ apache_exporter_download }}"
+    dest: /usr/local/src
+    remote_src: True
+    owner: root
+    group: root
+  tags:
+    - apache
+    - apache-exporter
+
+- name: Copy exporter binary
+  when: apache_exporter_version_changed and not ansible_check_mode
+  notify:
+    - Restart apache-exporter
+  copy:
+    src: "/usr/local/src/apache_exporter-{{ apache_exporter_version }}.linux-amd64/apache_exporter"
+    dest: /usr/bin/apache-exporter
+    remote_src: True
+    owner: root
+    group: root
+    mode: u=rwx,g=rx,o=rx
+  tags:
+    - apache
+    - apache-exporter
+
+- name: Write default config
+  notify:
+    - Restart apache-exporter
+  template:
+    src: exporter/default.j2
+    dest: /etc/default/apache-exporter
+  tags:
+    - apache
+    - apache-exporter
+
+- name: Write service file
+  notify:
+    - Restart apache-exporter
+  template:
+    src: exporter/service.j2
+    dest: /etc/systemd/system/apache-exporter.service
+  tags:
+    - apache
+    - apache-exporter
+
+- name: Start apache-exporter service
+  systemd:
+    name: apache-exporter
+    state: started
+    daemon_reload: True
+    masked: False
+    enabled: True
+  tags:
+    - apache
+    - apache-exporter
+
+- name: Remove install directory
+  file:
+    path: "/usr/local/src/apache_exporter-{{ apache_exporter_version }}.linux-amd64"
+    state: absent
+  tags:
+    - apache
+    - apache-exporter
+
+...

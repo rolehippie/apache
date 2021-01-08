@@ -1,0 +1,111 @@
+# Standards: 0.1
+---
+# @var apache_listen:description: List of ports to listen to
+# @var apache_listen:example: >
+# apache_listen:
+#   - 80
+#   - 127.0.0.1:8080
+# @end
+apache_listen:
+  - 80
+
+# @var apache_default_server_listen:description: Listening address of default vhost
+apache_default_server_listen: 0.0.0.0:80
+
+# @var apache_default_server_name:description: Optional default server name
+# @var apache_default_server_name:example: $ "server.example.com"
+apache_default_server_name:
+
+# @var apache_server_admin:description: Email address of server admin
+apache_server_admin: hostmaster@localhost
+
+# @var apache_server_tokens:description: What you return as the server HTTP response
+apache_server_tokens: Prod
+
+# @var apache_server_signature:description: Display server version and virtual host name
+apache_server_signature: "Off"
+
+# @var apache_trace_enable:description: Allow TRACE method for the webserver
+apache_trace_enable: "Off"
+
+# @var apache_keep_index:description: Keep an empty index page
+apache_keep_index: True
+
+# @var apache_index_content:description: Optional content for index page
+apache_index_content:
+
+# @var apache_general_packages:description: List of packages to install
+apache_general_packages:
+  - apache2
+  - apachetop
+  - libapache2-mod-rpaf
+
+# @var apache_extra_packages:description: List of additional packages to install
+apache_extra_packages: []
+
+# @var apache_general_modules:description: List of modules to enable
+# @var apache_general_modules:example: >
+# apache_general_modules:
+#   - proxy
+#   - name: ssl
+#     state: present
+#   - name: foobar
+#     state: absent
+# @end
+apache_general_modules:
+  - name: rpaf
+    state: present
+  - name: ssl
+    state: present
+  - name: rewrite
+    state: present
+  - name: include
+    state: present
+  - name: alias
+    state: present
+  - name: negotiation
+    state: present
+
+# @var apache_extra_modules:description: List of additional modules to enable
+# @var apache_extra_modules:example: >
+# apache_extra_modules:
+#   - proxy
+#   - name: ssl
+#     state: present
+#   - name: foobar
+#     state: absent
+# @end
+apache_extra_modules: []
+
+# @var apache_error_pages:description: Path to error page files
+apache_error_pages: error
+
+# @var apache_language_priority:description: List of language priorities for error pages
+apache_language_priority:
+  - de
+  - en
+  - cs
+  - es
+  - fr
+  - it
+  - nl
+  - sv
+  - pt-br
+  - ro
+
+# @var apache_exporter_enabled:description: Enable the installation of the apache exporter
+apache_exporter_enabled: True
+
+# @var apache_exporter_version:description: Version of the apache exporter to install
+apache_exporter_version: 0.7.0
+
+# @var apache_exporter_download:description: URL to the apache exporter to install
+apache_exporter_download: "https://github.com/Lusitaniae/apache_exporter/releases/download/v{{ apache_exporter_version }}/apache_exporter-{{ apache_exporter_version }}.linux-amd64.tar.gz"
+
+# @var apache_exporter_scrape_uri:description: Scrape URI of the exporter
+apache_exporter_scrape_uri: "http://{{ 'localhost' if apache_default_server_listen == '0.0.0.0:80' else apache_default_server_listen }}/server-status/?auto"
+
+# @var apache_exporter_args:description: Optional list of additional arguments for the apache exporter
+apache_exporter_args: []
+
+...
