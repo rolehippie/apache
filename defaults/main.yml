@@ -97,6 +97,7 @@ apache_language_priority:
 apache_exporter_enabled: True
 
 # @var apache_exporter_version:description: Version of the apache exporter to install
+# renovate: datasource=github-releases depName=Lusitaniae/apache_exporter
 apache_exporter_version: 0.7.0
 
 # @var apache_exporter_download:description: URL to the apache exporter to install
