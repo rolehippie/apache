@@ -5,7 +5,7 @@
   failed_when: False
   changed_when: False
   check_mode: False
-  command: /usr/bin/apache-exporter --version
+  shell: /usr/bin/apache-exporter --version 2>&1
   tags:
     - apache
     - apache-exporter
