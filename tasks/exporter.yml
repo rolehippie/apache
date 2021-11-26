@@ -50,6 +50,9 @@
   template:
     src: exporter/default.j2
     dest: /etc/default/apache-exporter
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
   tags:
     - apache
     - apache-exporter
@@ -60,6 +63,9 @@
   template:
     src: exporter/service.j2
     dest: /etc/systemd/system/apache-exporter.service
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
   tags:
     - apache
     - apache-exporter

@@ -14,6 +14,9 @@
   template:
     src: security.j2
     dest: /etc/apache2/conf-available/security.conf
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
   tags:
     - apache
 
@@ -23,6 +26,9 @@
   template:
     src: errors.j2
     dest: /etc/apache2/conf-available/localized-error-pages.conf
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
   tags:
     - apache
 
@@ -32,6 +38,9 @@
   template:
     src: ports.j2
     dest: /etc/apache2/ports.conf
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
   tags:
     - apache
 
@@ -41,6 +50,9 @@
   template:
     src: default.j2
     dest: /etc/apache2/sites-available/000-default.conf
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
   tags:
     - apache
 
@@ -71,6 +83,9 @@
     content: "{{ apache_index_content | default('') }}"
     dest: /var/www/html/index.html
     force: True
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
   tags:
     - apache
 
@@ -80,6 +95,9 @@
   copy:
     src: "{{ apache_error_pages }}"
     dest: /usr/share/apache2
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
   tags:
     - apache
 
