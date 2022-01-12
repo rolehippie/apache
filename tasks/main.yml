@@ -113,7 +113,7 @@
 
 - name: Include exporter tasks
   when: apache_exporter_enabled | default(False)
-  include: exporter.yml
+  include_tasks: exporter.yml
   tags:
     - apache
     - apache-exporter
