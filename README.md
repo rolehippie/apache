@@ -1,41 +1,42 @@
 # apache
 
-[![Source Code](https://img.shields.io/badge/github-source%20code-blue?logo=github&logoColor=white)](https://github.com/rolehippie/apache) [![Testing Build](https://github.com/rolehippie/apache/workflows/testing/badge.svg)](https://github.com/rolehippie/apache/actions?query=workflow%3Atesting) [![Readme Build](https://github.com/rolehippie/apache/workflows/readme/badge.svg)](https://github.com/rolehippie/apache/actions?query=workflow%3Areadme) [![Galaxy Build](https://github.com/rolehippie/apache/workflows/galaxy/badge.svg)](https://github.com/rolehippie/apache/actions?query=workflow%3Agalaxy) [![License: Apache-2.0](https://img.shields.io/github/license/rolehippie/apache)](https://github.com/rolehippie/apache/blob/master/LICENSE) 
+[![Source Code](https://img.shields.io/badge/github-source%20code-blue?logo=github&logoColor=white)](https://github.com/rolehippie/apache) [![Testing Build](https://github.com/rolehippie/apache/workflows/testing/badge.svg)](https://github.com/rolehippie/apache/actions?query=workflow%3Atesting) [![Readme Build](https://github.com/rolehippie/apache/workflows/readme/badge.svg)](https://github.com/rolehippie/apache/actions?query=workflow%3Areadme) [![Galaxy Build](https://github.com/rolehippie/apache/workflows/galaxy/badge.svg)](https://github.com/rolehippie/apache/actions?query=workflow%3Agalaxy) [![License: Apache-2.0](https://img.shields.io/github/license/rolehippie/apache)](https://github.com/rolehippie/apache/blob/master/LICENSE)
 
-Ansible role to install and configure an Apache webserver. 
+Ansible role to install and configure an Apache webserver.
 
-## Sponsor 
+## Sponsor
 
-[![Proact Deutschland GmbH](https://proact.eu/wp-content/uploads/2020/03/proact-logo.png)](https://proact.eu) 
+[![Proact Deutschland GmbH](https://proact.eu/wp-content/uploads/2020/03/proact-logo.png)](https://proact.eu)
 
 Building and improving this Ansible role have been sponsored by my employer **Proact Deutschland GmbH**.
 
 ## Table of content
 
-* [Default Variables](#default-variables)
-  * [apache_default_server_listen](#apache_default_server_listen)
-  * [apache_default_server_name](#apache_default_server_name)
-  * [apache_error_pages](#apache_error_pages)
-  * [apache_exporter_args](#apache_exporter_args)
-  * [apache_exporter_download](#apache_exporter_download)
-  * [apache_exporter_enabled](#apache_exporter_enabled)
-  * [apache_exporter_scrape_uri](#apache_exporter_scrape_uri)
-  * [apache_exporter_version](#apache_exporter_version)
-  * [apache_extra_modules](#apache_extra_modules)
-  * [apache_extra_packages](#apache_extra_packages)
-  * [apache_general_modules](#apache_general_modules)
-  * [apache_general_packages](#apache_general_packages)
-  * [apache_index_content](#apache_index_content)
-  * [apache_keep_index](#apache_keep_index)
-  * [apache_language_priority](#apache_language_priority)
-  * [apache_listen](#apache_listen)
-  * [apache_server_admin](#apache_server_admin)
-  * [apache_server_signature](#apache_server_signature)
-  * [apache_server_tokens](#apache_server_tokens)
-  * [apache_trace_enable](#apache_trace_enable)
-* [Dependencies](#dependencies)
-* [License](#license)
-* [Author](#author)
+- [Default Variables](#default-variables)
+  - [apache_default_server_listen](#apache_default_server_listen)
+  - [apache_default_server_name](#apache_default_server_name)
+  - [apache_error_pages](#apache_error_pages)
+  - [apache_exporter_args](#apache_exporter_args)
+  - [apache_exporter_download](#apache_exporter_download)
+  - [apache_exporter_enabled](#apache_exporter_enabled)
+  - [apache_exporter_scrape_uri](#apache_exporter_scrape_uri)
+  - [apache_exporter_version](#apache_exporter_version)
+  - [apache_extra_modules](#apache_extra_modules)
+  - [apache_extra_packages](#apache_extra_packages)
+  - [apache_general_modules](#apache_general_modules)
+  - [apache_general_packages](#apache_general_packages)
+  - [apache_index_content](#apache_index_content)
+  - [apache_keep_index](#apache_keep_index)
+  - [apache_language_priority](#apache_language_priority)
+  - [apache_listen](#apache_listen)
+  - [apache_server_admin](#apache_server_admin)
+  - [apache_server_signature](#apache_server_signature)
+  - [apache_server_tokens](#apache_server_tokens)
+  - [apache_trace_enable](#apache_trace_enable)
+- [Discovered Tags](#discovered-tags)
+- [Dependencies](#dependencies)
+- [License](#license)
+- [Author](#author)
 
 ---
 
@@ -126,7 +127,7 @@ Version of the apache exporter to install
 #### Default value
 
 ```YAML
-apache_exporter_version: 0.10.1
+apache_exporter_version: 0.11.0
 ```
 
 ### apache_extra_modules
@@ -305,9 +306,16 @@ Allow TRACE method for the webserver
 apache_trace_enable: Off
 ```
 
+## Discovered Tags
+
+**_apache_**
+
+**_apache-exporter_**
+
+
 ## Dependencies
 
-* None
+- None
 
 ## License
 
