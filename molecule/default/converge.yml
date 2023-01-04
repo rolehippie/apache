@@ -1,0 +1,10 @@
+# Standards: 1.2
+---
+- name: Converge
+  hosts: all
+  vars:
+    apache_exporter_enabled: False
+  roles:
+    - role: rolehippie.apache
+
+...
