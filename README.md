@@ -5,7 +5,7 @@
 [![Readme Workflow](https://github.com/rolehippie/apache/actions/workflows/readme.yml/badge.svg)](https://github.com/rolehippie/apache/actions/workflows/readme.yml)
 [![Galaxy Workflow](https://github.com/rolehippie/apache/actions/workflows/galaxy.yml/badge.svg)](https://github.com/rolehippie/apache/actions/workflows/galaxy.yml)
 [![License: Apache-2.0](https://img.shields.io/github/license/rolehippie/apache)](https://github.com/rolehippie/apache/blob/master/LICENSE)
-[![Ansible Role](https://img.shields.io/ansible/role/52670)](https://galaxy.ansible.com/rolehippie/apache)
+[![Ansible Role](https://img.shields.io/badge/role-rolehippie.apache-blue)](https://galaxy.ansible.com/rolehippie/apache)
 
 Ansible role to install and configure an Apache webserver.
 
@@ -15,7 +15,6 @@ Building and improving this Ansible role have been sponsored by my current and p
 
 ## Table of content
 
-- [Requirements](#requirements)
 - [Default Variables](#default-variables)
   - [apache_default_server_listen](#apache_default_server_listen)
   - [apache_default_server_name](#apache_default_server_name)
@@ -43,11 +42,6 @@ Building and improving this Ansible role have been sponsored by my current and p
 - [Author](#author)
 
 ---
-
-## Requirements
-
-- Minimum Ansible version: `2.10`
-
 
 ## Default Variables
 
