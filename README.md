@@ -15,6 +15,7 @@ Building and improving this Ansible role have been sponsored by my current and p
 
 ## Table of content
 
+- [Requirements](#requirements)
 - [Default Variables](#default-variables)
   - [apache_default_server_listen](#apache_default_server_listen)
   - [apache_default_server_name](#apache_default_server_name)
@@ -42,6 +43,11 @@ Building and improving this Ansible role have been sponsored by my current and p
 - [Author](#author)
 
 ---
+
+## Requirements
+
+- Minimum Ansible version: `2.10`
+
 
 ## Default Variables
 
