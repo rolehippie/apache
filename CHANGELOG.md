@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/rolehippie/apache/compare/v1.1.0...v1.1.1) (2023-04-17)
+
+
+### Bugfixes
+
+* **deps:** update dependency lusitaniae/apache_exporter to v0.13.3 ([60e9e14](https://github.com/rolehippie/apache/commit/60e9e14efaf858e1b955fc135b426edda8a20be9))
+
 ## [1.1.0](https://github.com/rolehippie/apache/compare/v1.0.0...v1.1.0) (2023-04-03)
 
 
