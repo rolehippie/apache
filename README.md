@@ -136,7 +136,7 @@ Version of the apache exporter to install
 #### Default value
 
 ```YAML
-apache_exporter_version: 0.13.4
+apache_exporter_version: 1.0.0
 ```
 
 ### apache_extra_modules
