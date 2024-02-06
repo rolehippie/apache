@@ -1,19 +1,18 @@
-# Standards: 1.2
 ---
 - name: Reload apache
-  systemd:
+  ansible.builtin.systemd:
     name: apache2
     state: reloaded
     daemon_reload: True
 
 - name: Restart apache
-  systemd:
+  ansible.builtin.systemd:
     name: apache2
     state: restarted
     daemon_reload: True
 
 - name: Restart apache-exporter
-  systemd:
+  ansible.builtin.systemd:
     name: apache-exporter
     state: restarted
     daemon_reload: yes

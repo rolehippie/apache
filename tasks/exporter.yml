@@ -1,17 +1,16 @@
-# Standards: 1.2
 ---
 - name: Check existing install
   register: apache_exporter_version_check
   failed_when: False
   changed_when: False
   check_mode: False
-  shell: /usr/bin/apache-exporter --version 2>&1
+  ansible.builtin.shell: /usr/bin/apache-exporter --version 2>&1
   tags:
     - apache
     - apache-exporter
 
 - name: Fact version change
-  set_fact:
+  ansible.builtin.set_fact:
     apache_exporter_version_changed: "{{ apache_exporter_version_check.rc != 0 or (apache_exporter_version_check.stdout_lines is defined and apache_exporter_version not in apache_exporter_version_check.stdout_lines[0]) | bool }}"
   tags:
     - apache
@@ -19,7 +18,7 @@
 
 - name: Download release tarball
   when: apache_exporter_version_changed
-  unarchive:
+  ansible.builtin.unarchive:
     src: "{{ apache_exporter_download }}"
     dest: /usr/local/src
     remote_src: True
@@ -33,7 +32,7 @@
   when: apache_exporter_version_changed and not ansible_check_mode
   notify:
     - Restart apache-exporter
-  copy:
+  ansible.builtin.copy:
     src: "/usr/local/src/apache_exporter-{{ apache_exporter_version }}.linux-amd64/apache_exporter"
     dest: /usr/bin/apache-exporter
     remote_src: True
@@ -47,7 +46,7 @@
 - name: Write default config
   notify:
     - Restart apache-exporter
-  template:
+  ansible.builtin.template:
     src: exporter/default.j2
     dest: /etc/default/apache-exporter
     owner: root
@@ -60,7 +59,7 @@
 - name: Write service file
   notify:
     - Restart apache-exporter
-  template:
+  ansible.builtin.template:
     src: exporter/service.j2
     dest: /etc/systemd/system/apache-exporter.service
     owner: root
@@ -71,7 +70,7 @@
     - apache-exporter
 
 - name: Start apache-exporter service
-  systemd:
+  ansible.builtin.systemd:
     name: apache-exporter
     state: started
     daemon_reload: True
@@ -82,7 +81,7 @@
     - apache-exporter
 
 - name: Remove install directory
-  file:
+  ansible.builtin.file:
     path: "/usr/local/src/apache_exporter-{{ apache_exporter_version }}.linux-amd64"
     state: absent
   tags:
