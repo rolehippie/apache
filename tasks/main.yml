@@ -1,7 +1,7 @@
 ---
 - name: Install required packages
   loop: "{{ apache_general_packages + apache_extra_packages }}"
-  package:
+  ansible.builtin.package:
     name: "{{ item }}"
     state: present
   tags:
@@ -10,7 +10,7 @@
 - name: Write security config
   notify:
     - Restart apache
-  template:
+  ansible.builtin.template:
     src: security.j2
     dest: /etc/apache2/conf-available/security.conf
     owner: root
@@ -22,7 +22,7 @@
 - name: Write errors config
   notify:
     - Restart apache
-  template:
+  ansible.builtin.template:
     src: errors.j2
     dest: /etc/apache2/conf-available/localized-error-pages.conf
     owner: root
@@ -34,7 +34,7 @@
 - name: Write ports config
   notify:
     - Restart apache
-  template:
+  ansible.builtin.template:
     src: ports.j2
     dest: /etc/apache2/ports.conf
     owner: root
@@ -46,7 +46,7 @@
 - name: Write default config
   notify:
     - Restart apache
-  template:
+  ansible.builtin.template:
     src: default.j2
     dest: /etc/apache2/sites-available/000-default.conf
     owner: root
@@ -59,7 +59,7 @@
   loop: "{{ apache_general_modules + apache_extra_modules }}"
   notify:
     - Restart apache
-  apache2_module:
+  community.general.apache2_module:
     name: "{{ item.name | default(item) }}"
     force: "{{ item.force | default(False) }}"
     ignore_configcheck: "{{ item.ignore_configcheck | default(False) }}"
@@ -70,7 +70,7 @@
 
 - name: Remove index page
   when: not apache_keep_index
-  file:
+  ansible.builtin.file:
     path: /var/www/html/index.html
     state: absent
   tags:
@@ -78,7 +78,7 @@
 
 - name: Override index page
   when: apache_keep_index
-  copy:
+  ansible.builtin.copy:
     content: "{{ apache_index_content | default('') }}"
     dest: /var/www/html/index.html
     force: True
@@ -91,7 +91,7 @@
 - name: Copy error pages
   notify:
     - Reload apache
-  copy:
+  ansible.builtin.copy:
     src: "{{ apache_error_pages }}"
     dest: /usr/share/apache2
     owner: root
@@ -101,7 +101,7 @@
     - apache
 
 - name: Start apache service
-  systemd:
+  ansible.builtin.systemd:
     name: apache2
     state: started
     daemon_reload: True
@@ -112,7 +112,7 @@
 
 - name: Include exporter tasks
   when: apache_exporter_enabled | default(False)
-  include_tasks: exporter.yml
+  ansible.builtin.include_tasks: exporter.yml
   tags:
     - apache
     - apache-exporter
