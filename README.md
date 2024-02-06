@@ -323,7 +323,7 @@ apache_trace_enable: Off
 
 ## Dependencies
 
-- None
+- [community.general](https://github.com/ansible-collections/community.general)
 
 ## License
 
