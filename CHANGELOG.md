@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.0.0](https://github.com/rolehippie/apache/compare/v2.0.5...v3.0.0) (2024-02-12)
+
+
+### Features
+
+* drop support for ubuntu 18.04 ([4094a86](https://github.com/rolehippie/apache/commit/4094a869dbd72ed8f6494f2560b49048a2f98bca))
+* used full qualified collection names ([6931bb4](https://github.com/rolehippie/apache/commit/6931bb4abb1f968efc9fb71b6f1dab59d5af425e))
+
+
+### Bugfixes
+
+* remove meta requirements and document used collections ([272625a](https://github.com/rolehippie/apache/commit/272625aa77dfe2c6a296c41e1584dd871b08c9ca))
+
 ## [2.0.5](https://github.com/rolehippie/apache/compare/v2.0.4...v2.0.5) (2024-02-05)
 
 
