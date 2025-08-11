@@ -1,4 +1,4 @@
-# apache
+# workspace
 
 [![Source Code](https://img.shields.io/badge/github-source%20code-blue?logo=github&logoColor=white)](https://github.com/rolehippie/apache)
 [![General Workflow](https://github.com/rolehippie/apache/actions/workflows/general.yml/badge.svg)](https://github.com/rolehippie/apache/actions/workflows/general.yml)
@@ -103,8 +103,10 @@ URL to the apache exporter to install
 #### Default value
 
 ```YAML
-apache_exporter_download: https://github.com/Lusitaniae/apache_exporter/releases/download/v{{
-  apache_exporter_version }}/apache_exporter-{{ apache_exporter_version }}.linux-amd64.tar.gz
+apache_exporter_download: 
+  https://github.com/Lusitaniae/apache_exporter/releases/download/v{{ 
+  apache_exporter_version }}/apache_exporter-{{ apache_exporter_version 
+  }}.linux-amd64.tar.gz
 ```
 
 ### apache_exporter_enabled
@@ -124,8 +126,9 @@ Scrape URI of the exporter
 #### Default value
 
 ```YAML
-apache_exporter_scrape_uri: http://{{ 'localhost' if apache_default_server_listen
-  == '0.0.0.0:80' else apache_default_server_listen }}/server-status/?auto
+apache_exporter_scrape_uri: http://{{ 'localhost' if 
+  apache_default_server_listen == '0.0.0.0:80' else apache_default_server_listen
+  }}/server-status/?auto
 ```
 
 ### apache_exporter_version
@@ -319,7 +322,6 @@ apache_trace_enable: Off
 **_apache_**
 
 **_apache-exporter_**
-
 
 ## Dependencies
 
