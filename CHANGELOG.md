@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.0](https://github.com/rolehippie/apache/compare/v3.0.4...v3.1.0) (2025-09-17)
+
+
+### Features
+
+* apply new standard renovate preset ([fa8dd5a](https://github.com/rolehippie/apache/commit/fa8dd5a63e823a55022075518d9d199ee895f3ec))
+
 ## [3.0.4](https://github.com/rolehippie/apache/compare/v3.0.3...v3.0.4) (2025-03-24)
 
 
