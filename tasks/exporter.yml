@@ -1,9 +1,9 @@
 ---
 - name: Check existing install
   register: apache_exporter_version_check
-  failed_when: False
-  changed_when: False
-  check_mode: False
+  failed_when: false
+  changed_when: false
+  check_mode: false
   ansible.builtin.shell: /usr/bin/apache-exporter --version 2>&1
   tags:
     - apache
@@ -17,11 +17,12 @@
     - apache-exporter
 
 - name: Download release tarball
-  when: apache_exporter_version_changed
+  when:
+    - apache_exporter_version_changed
   ansible.builtin.unarchive:
     src: "{{ apache_exporter_download }}"
     dest: /usr/local/src
-    remote_src: True
+    remote_src: true
     owner: root
     group: root
   tags:
@@ -29,13 +30,15 @@
     - apache-exporter
 
 - name: Copy exporter binary
-  when: apache_exporter_version_changed and not ansible_check_mode
+  when:
+    - apache_exporter_version_changed
+    - not ansible_check_mode
   notify:
     - Restart apache-exporter
   ansible.builtin.copy:
-    src: "/usr/local/src/apache_exporter-{{ apache_exporter_version }}.linux-amd64/apache_exporter"
+    src: "/usr/local/src/apache_exporter-{{ apache_exporter_version }}.linux-{{ apache_exporter_arch }}/apache_exporter"
     dest: /usr/bin/apache-exporter
-    remote_src: True
+    remote_src: true
     owner: root
     group: root
     mode: u=rwx,g=rx,o=rx
@@ -73,16 +76,16 @@
   ansible.builtin.systemd:
     name: apache-exporter
     state: started
-    daemon_reload: True
-    masked: False
-    enabled: True
+    daemon_reload: true
+    masked: false
+    enabled: true
   tags:
     - apache
     - apache-exporter
 
 - name: Remove install directory
   ansible.builtin.file:
-    path: "/usr/local/src/apache_exporter-{{ apache_exporter_version }}.linux-amd64"
+    path: "/usr/local/src/apache_exporter-{{ apache_exporter_version }}.linux-{{ apache_exporter_arch }}"
     state: absent
   tags:
     - apache

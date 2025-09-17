@@ -1,4 +1,4 @@
-# workspace
+# apache
 
 [![Source Code](https://img.shields.io/badge/github-source%20code-blue?logo=github&logoColor=white)](https://github.com/rolehippie/apache)
 [![General Workflow](https://github.com/rolehippie/apache/actions/workflows/general.yml/badge.svg)](https://github.com/rolehippie/apache/actions/workflows/general.yml)
@@ -20,6 +20,7 @@ Building and improving this Ansible role have been sponsored by my current and p
   - [apache_default_server_listen](#apache_default_server_listen)
   - [apache_default_server_name](#apache_default_server_name)
   - [apache_error_pages](#apache_error_pages)
+  - [apache_exporter_arch](#apache_exporter_arch)
   - [apache_exporter_args](#apache_exporter_args)
   - [apache_exporter_download](#apache_exporter_download)
   - [apache_exporter_enabled](#apache_exporter_enabled)
@@ -86,6 +87,17 @@ Path to error page files
 apache_error_pages: error
 ```
 
+### apache_exporter_arch
+
+Target system architecture of the binary
+
+#### Default value
+
+```YAML
+apache_exporter_arch: "{{ 'arm64' if ansible_architecture == 'aarch64' or ansible_architecture
+  == 'arm64' else 'amd64' }}"
+```
+
 ### apache_exporter_args
 
 Optional list of additional arguments for the apache exporter
@@ -106,7 +118,7 @@ URL to the apache exporter to install
 apache_exporter_download: 
   https://github.com/Lusitaniae/apache_exporter/releases/download/v{{ 
   apache_exporter_version }}/apache_exporter-{{ apache_exporter_version 
-  }}.linux-amd64.tar.gz
+  }}.linux-{{ apache_exporter_arch }}.tar.gz
 ```
 
 ### apache_exporter_enabled

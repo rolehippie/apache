@@ -28,7 +28,7 @@ apache_server_signature: "Off"
 apache_trace_enable: "Off"
 
 # @var apache_keep_index:description: Keep an empty index page
-apache_keep_index: True
+apache_keep_index: true
 
 # @var apache_index_content:description: Optional content for index page
 apache_index_content:
@@ -93,14 +93,17 @@ apache_language_priority:
   - ro
 
 # @var apache_exporter_enabled:description: Enable the installation of the apache exporter
-apache_exporter_enabled: True
+apache_exporter_enabled: true
 
 # @var apache_exporter_version:description: Version of the apache exporter to install
 # renovate: datasource=github-releases depName=Lusitaniae/apache_exporter
 apache_exporter_version: 1.0.10
 
+# @var apache_exporter_arch:description: Target system architecture of the binary
+apache_exporter_arch: "{{ 'arm64' if ansible_architecture == 'aarch64' or ansible_architecture == 'arm64' else 'amd64' }}"
+
 # @var apache_exporter_download:description: URL to the apache exporter to install
-apache_exporter_download: "https://github.com/Lusitaniae/apache_exporter/releases/download/v{{ apache_exporter_version }}/apache_exporter-{{ apache_exporter_version }}.linux-amd64.tar.gz"
+apache_exporter_download: "https://github.com/Lusitaniae/apache_exporter/releases/download/v{{ apache_exporter_version }}/apache_exporter-{{ apache_exporter_version }}.linux-{{ apache_exporter_arch }}.tar.gz"
 
 # @var apache_exporter_scrape_uri:description: Scrape URI of the exporter
 apache_exporter_scrape_uri: "http://{{ 'localhost' if apache_default_server_listen == '0.0.0.0:80' else apache_default_server_listen }}/server-status/?auto"

@@ -1,1 +1,1 @@
-ARGS="--scrape_uri={{ apache_exporter_scrape_uri }}{{ ' ' + apache_exporter_args | join(' ') if apache_exporter_args | default(False) else '' }}"
+ARGS="--scrape_uri={{ apache_exporter_scrape_uri }}{{ ' ' + apache_exporter_args | join(' ') if apache_exporter_args | default(false) else '' }}"

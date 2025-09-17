@@ -61,15 +61,16 @@
     - Restart apache
   community.general.apache2_module:
     name: "{{ item.name | default(item) }}"
-    force: "{{ item.force | default(False) }}"
-    ignore_configcheck: "{{ item.ignore_configcheck | default(False) }}"
+    force: "{{ item.force | default(false) }}"
+    ignore_configcheck: "{{ item.ignore_configcheck | default(false) }}"
     identifier: "{{ item.identifier | default(omit) }}"
     state: "{{ item.state | default('present') }}"
   tags:
     - apache
 
 - name: Remove index page
-  when: not apache_keep_index
+  when:
+    - not apache_keep_index
   ansible.builtin.file:
     path: /var/www/html/index.html
     state: absent
@@ -77,11 +78,12 @@
     - apache
 
 - name: Override index page
-  when: apache_keep_index
+  when:
+    - apache_keep_index
   ansible.builtin.copy:
-    content: "{{ apache_index_content | default('') }}"
+    content: "{{ '' if apache_index_content is none else apache_index_content }}"
     dest: /var/www/html/index.html
-    force: True
+    force: true
     owner: root
     group: root
     mode: u=rw,g=r,o=r
@@ -104,14 +106,15 @@
   ansible.builtin.systemd:
     name: apache2
     state: started
-    daemon_reload: True
-    masked: False
-    enabled: True
+    daemon_reload: true
+    masked: false
+    enabled: true
   tags:
     - apache
 
 - name: Include exporter tasks
-  when: apache_exporter_enabled | default(False)
+  when:
+    - apache_exporter_enabled
   ansible.builtin.include_tasks: exporter.yml
   tags:
     - apache

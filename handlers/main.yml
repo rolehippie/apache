@@ -3,18 +3,18 @@
   ansible.builtin.systemd:
     name: apache2
     state: reloaded
-    daemon_reload: True
+    daemon_reload: true
 
 - name: Restart apache
   ansible.builtin.systemd:
     name: apache2
     state: restarted
-    daemon_reload: True
+    daemon_reload: true
 
 - name: Restart apache-exporter
   ansible.builtin.systemd:
     name: apache-exporter
     state: restarted
-    daemon_reload: yes
+    daemon_reload: true
 
 ...

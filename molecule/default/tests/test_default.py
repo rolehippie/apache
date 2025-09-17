@@ -12,7 +12,7 @@ def test_apache_running_and_enabled(host):
     assert svc.is_enabled
 
 def test_apache_listener(host):
-    assert host.socket("tcp://127.0.0.1:80").is_listening
+    assert host.socket("tcp://0.0.0.0:80").is_listening
 
 def test_exporter_running_and_enabled(host):
     svc = host.service("apache-exporter")
@@ -20,4 +20,4 @@ def test_exporter_running_and_enabled(host):
     assert svc.is_enabled
 
 def test_exporter_listener(host):
-    assert host.socket("tcp://127.0.0.1:9117").is_listening
+    assert host.socket("tcp://0.0.0.0:9117").is_listening

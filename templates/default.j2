@@ -1,5 +1,5 @@
 <VirtualHost {{ apache_default_server_listen | default('*:80') }}>
-{% if apache_default_server_name | default(False) %}
+{% if apache_default_server_name is not none and (apache_default_server_name | length > 0) %}
 	ServerName {{ apache_default_server_name }}
 
 {% endif %}
