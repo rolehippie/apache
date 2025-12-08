@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.1.0](https://github.com/rolehippie/apache/compare/v4.0.0...v4.1.0) (2025-12-08)
+
+
+### Features
+
+* **minor:** update dependency community.general to >=12.1.0,<12.2.0 ([#53](https://github.com/rolehippie/apache/issues/53)) ([923948c](https://github.com/rolehippie/apache/commit/923948cf7011ca54056ce8e17bc344791bc1b96c))
+
 ## [4.0.0](https://github.com/rolehippie/apache/compare/v3.1.0...v4.0.0) (2025-11-10)
 
 
