@@ -97,7 +97,7 @@ apache_exporter_enabled: true
 
 # @var apache_exporter_version:description: Version of the apache exporter to install
 # renovate: datasource=github-releases depName=Lusitaniae/apache_exporter
-apache_exporter_version: 1.0.10
+apache_exporter_version: 1.0.12
 
 # @var apache_exporter_arch:description: Target system architecture of the binary
 apache_exporter_arch: "{{ 'arm64' if ansible_architecture == 'aarch64' or ansible_architecture == 'arm64' else 'amd64' }}"
