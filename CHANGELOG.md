@@ -1,5 +1,15 @@
 # Changelog
 
+## [4.2.1](https://github.com/rolehippie/apache/compare/v4.2.0...v4.2.1) (2026-01-12)
+
+### Dependencies
+
+* **patch:** update dependency lusitaniae/apache_exporter to v1.0.12 ([#61](https://github.com/rolehippie/apache/issues/61)) ([b826fa9](https://github.com/rolehippie/apache/commit/b826fa9647e64bc8773782165715e64aeef57334))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([af0bd4c](https://github.com/rolehippie/apache/commit/af0bd4c73118d9a308fe3280380198458fa00861))
+
 ## [4.2.0](https://github.com/rolehippie/apache/compare/v4.1.0...v4.2.0) (2026-01-05)
 
 
