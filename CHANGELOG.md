@@ -1,5 +1,19 @@
 # Changelog
 
+## [4.5.0](https://github.com/rolehippie/apache/compare/v4.4.0...v4.5.0) (2026-04-06)
+
+### Dependencies
+
+* **minor:** update dependency community.general to >=12.5.0,<12.6.0 ([#69](https://github.com/rolehippie/apache/issues/69)) ([637512b](https://github.com/rolehippie/apache/commit/637512b8600e92dfb9e7823204e641404e5815ca))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([c7c35aa](https://github.com/rolehippie/apache/commit/c7c35aaee0686a202dd9c83980dc08c5a6b32c93))
+* **flake:** updated lockfile [skip ci] ([614c6db](https://github.com/rolehippie/apache/commit/614c6db4bd91167a7ac87043588cf89159359c86))
+* **flake:** updated lockfile [skip ci] ([524d306](https://github.com/rolehippie/apache/commit/524d3068798978e6e4baa1986d042d685d357ff1))
+* **flake:** updated lockfile [skip ci] ([3af5fd0](https://github.com/rolehippie/apache/commit/3af5fd00e4b158dcca81482ee5838e313f2a4b2e))
+* **flake:** updated lockfile [skip ci] ([dcb179e](https://github.com/rolehippie/apache/commit/dcb179e25cf1208b706d6d4b4791eec085ccffa1))
+
 ## [4.4.0](https://github.com/rolehippie/apache/compare/v4.3.0...v4.4.0) (2026-03-02)
 
 ### Dependencies
