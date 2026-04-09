@@ -94,8 +94,7 @@ Target system architecture of the binary
 #### Default value
 
 ```YAML
-apache_exporter_arch: "{{ 'arm64' if ansible_architecture == 'aarch64' or ansible_architecture
-  == 'arm64' else 'amd64' }}"
+apache_exporter_arch: "{{ 'arm64' if ansible_architecture == 'aarch64' or ansible_architecture == 'arm64' else 'amd64' }}"
 ```
 
 ### apache_exporter_args
@@ -115,10 +114,7 @@ URL to the apache exporter to install
 #### Default value
 
 ```YAML
-apache_exporter_download: 
-  https://github.com/Lusitaniae/apache_exporter/releases/download/v{{ 
-  apache_exporter_version }}/apache_exporter-{{ apache_exporter_version 
-  }}.linux-{{ apache_exporter_arch }}.tar.gz
+apache_exporter_download: https://github.com/Lusitaniae/apache_exporter/releases/download/v{{ apache_exporter_version }}/apache_exporter-{{ apache_exporter_version }}.linux-{{ apache_exporter_arch }}.tar.gz
 ```
 
 ### apache_exporter_enabled
@@ -138,9 +134,7 @@ Scrape URI of the exporter
 #### Default value
 
 ```YAML
-apache_exporter_scrape_uri: http://{{ 'localhost' if 
-  apache_default_server_listen == '0.0.0.0:80' else apache_default_server_listen
-  }}/server-status/?auto
+apache_exporter_scrape_uri: http://{{ 'localhost' if apache_default_server_listen == '0.0.0.0:80' else apache_default_server_listen }}/server-status/?auto
 ```
 
 ### apache_exporter_version
