@@ -1,5 +1,7 @@
 # Changelog
 
+## [5.2.0](https://github.com/rolehippie/apache/compare/v5.1.0...v5.2.0) (2026-07-20)
+
 ## [5.1.0](https://github.com/rolehippie/apache/compare/v5.0.0...v5.1.0) (2026-06-29)
 
 ## [5.0.0](https://github.com/rolehippie/apache/compare/v4.6.0...v5.0.0) (2026-06-01)
