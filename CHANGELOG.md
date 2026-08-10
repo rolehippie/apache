@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.4.0](https://github.com/rolehippie/apache/compare/v5.3.0...v5.4.0) (2026-08-10)
+
+### Dependencies
+
+* **minor:** update dependency pipx:ansible-doctor to v8.4.0 ([#82](https://github.com/rolehippie/apache/issues/82)) ([46e1deb](https://github.com/rolehippie/apache/commit/46e1debff46c09fdc0117be5c2c8b20fe2d563b3))
+* **patch:** update dependency python to v3.14.7 ([#80](https://github.com/rolehippie/apache/issues/80)) ([53ecee3](https://github.com/rolehippie/apache/commit/53ecee3eacd12ca274a1cbeab70405f99339b9c9))
+
 ## [5.3.0](https://github.com/rolehippie/apache/compare/v5.2.0...v5.3.0) (2026-07-27)
 
 ## [5.2.0](https://github.com/rolehippie/apache/compare/v5.1.0...v5.2.0) (2026-07-20)
