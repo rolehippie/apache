@@ -94,7 +94,7 @@ Target system architecture of the binary
 #### Default value
 
 ```YAML
-apache_exporter_arch: "{{ 'arm64' if ansible_architecture == 'aarch64' or ansible_architecture == 'arm64' else 'amd64' }}"
+apache_exporter_arch: "{{ 'arm64' if ansible_facts['architecture'] in ['aarch64', 'arm64'] else 'amd64' }}"
 ```
 
 ### apache_exporter_args

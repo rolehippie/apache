@@ -100,7 +100,7 @@ apache_exporter_enabled: true
 apache_exporter_version: 1.1.1
 
 # @var apache_exporter_arch:description: Target system architecture of the binary
-apache_exporter_arch: "{{ 'arm64' if ansible_architecture == 'aarch64' or ansible_architecture == 'arm64' else 'amd64' }}"
+apache_exporter_arch: "{{ 'arm64' if ansible_facts['architecture'] in ['aarch64', 'arm64'] else 'amd64' }}"
 
 # @var apache_exporter_download:description: URL to the apache exporter to install
 apache_exporter_download: "https://github.com/Lusitaniae/apache_exporter/releases/download/v{{ apache_exporter_version }}/apache_exporter-{{ apache_exporter_version }}.linux-{{ apache_exporter_arch }}.tar.gz"
