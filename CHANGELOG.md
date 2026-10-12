@@ -1,5 +1,19 @@
 # Changelog
 
+## [5.8.0](https://github.com/rolehippie/apache/compare/v5.7.0...v5.8.0) (2026-10-12)
+
+### Dependencies
+
+* **minor:** update dependency community.general to >=13.5.0,<13.6.0 ([#100](https://github.com/rolehippie/apache/issues/100)) ([3dcb2e4](https://github.com/rolehippie/apache/commit/3dcb2e4e8cd3e16b78de08494dc0321f876673ea))
+* **mise:** update dependency pipx:ansible-core to v2.21.5 ([#98](https://github.com/rolehippie/apache/issues/98)) ([8e00e42](https://github.com/rolehippie/apache/commit/8e00e42c2eb923c2a76f66dc1c3835d3709e0f50))
+* **mise:** update dependency pipx:ansible-doctor to v8.4.2 ([#92](https://github.com/rolehippie/apache/issues/92)) ([0d02adf](https://github.com/rolehippie/apache/commit/0d02adf5ce5f75cfd227188f9ecfc15597c9e8b4))
+* **mise:** update dependency pipx:ansible-doctor to v8.4.3 ([#99](https://github.com/rolehippie/apache/issues/99)) ([7bea3bb](https://github.com/rolehippie/apache/commit/7bea3bbe621d0a244c799374792cef71ab1cf0bb))
+* **mise:** update dependency pipx:ansible-lint to v26.9.0 ([#93](https://github.com/rolehippie/apache/issues/93)) ([b2c470a](https://github.com/rolehippie/apache/commit/b2c470a4e23b6add520a2840e4085c5b1b6bafff))
+* **mise:** update dependency pipx:molecule to v26.10.0 ([#102](https://github.com/rolehippie/apache/issues/102)) ([5eb6a50](https://github.com/rolehippie/apache/commit/5eb6a5002e164ebd95fd200fb2d9c2869486987d))
+* **mise:** update dependency pipx:molecule to v26.9.0 ([#94](https://github.com/rolehippie/apache/issues/94)) ([796c5d0](https://github.com/rolehippie/apache/commit/796c5d0fa3dc68f1bfa83b8d45ed186a157b5be8))
+* **mise:** update dependency prek to v0.5.4 ([#95](https://github.com/rolehippie/apache/issues/95)) ([a668cb3](https://github.com/rolehippie/apache/commit/a668cb3bec01e54e8a8906864cfa2c636df87246))
+* **mise:** update dependency prek to v0.5.5 ([#97](https://github.com/rolehippie/apache/issues/97)) ([c5cf2dc](https://github.com/rolehippie/apache/commit/c5cf2dcb53663cd11414b008a42b1e87af77fcd9))
+
 ## [5.7.0](https://github.com/rolehippie/apache/compare/v5.6.0...v5.7.0) (2026-09-14)
 
 ### Dependencies
