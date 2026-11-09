@@ -1,5 +1,23 @@
 # Changelog
 
+## [6.0.0](https://github.com/rolehippie/apache/compare/v5.8.0...v6.0.0) (2026-11-09)
+
+### Dependencies
+
+* **major:** update dependency community.general to v14 ([#109](https://github.com/rolehippie/apache/issues/109)) ([bd58b73](https://github.com/rolehippie/apache/commit/bd58b738c76ddaaa1e08f6b131a9a9bf24976d49))
+* **mise:** update dependency pipx:ansible-core to v2.22.0 ([#108](https://github.com/rolehippie/apache/issues/108)) ([316609e](https://github.com/rolehippie/apache/commit/316609ec1abf96e36e8cfbc1c7798775f203d67d))
+* **mise:** update dependency pipx:ansible-doctor to v8.4.4 ([#114](https://github.com/rolehippie/apache/issues/114)) ([15bc197](https://github.com/rolehippie/apache/commit/15bc19720baec7574033de1abde0b44842fa1db2))
+* **mise:** update dependency pipx:ansible-lint to v26.10.0 ([#101](https://github.com/rolehippie/apache/issues/101)) ([3d592af](https://github.com/rolehippie/apache/commit/3d592af4ba292e289c128486f94452879149b0a6))
+* **mise:** update dependency pipx:ansible-lint to v26.10.1 ([#103](https://github.com/rolehippie/apache/issues/103)) ([eaa84b5](https://github.com/rolehippie/apache/commit/eaa84b53543da06a891cb6d58ddf8eaceb4e2704))
+* **mise:** update dependency pipx:ansible-lint to v26.11.0 ([#111](https://github.com/rolehippie/apache/issues/111)) ([9dc2136](https://github.com/rolehippie/apache/commit/9dc2136658d19f028802d01b43edfe53979f6f34))
+* **mise:** update dependency pipx:molecule to v26.11.0 ([#112](https://github.com/rolehippie/apache/issues/112)) ([20fac93](https://github.com/rolehippie/apache/commit/20fac93d976a589916419b947206c77894f60024))
+* **mise:** update dependency prek to v0.5.10 ([#110](https://github.com/rolehippie/apache/issues/110)) ([c1e0248](https://github.com/rolehippie/apache/commit/c1e02482f091117556eb742af70c7bd4942cd528))
+* **mise:** update dependency prek to v0.5.6 ([#104](https://github.com/rolehippie/apache/issues/104)) ([831f66c](https://github.com/rolehippie/apache/commit/831f66c8abab3609fa3002b998e43a44010f7010))
+* **mise:** update dependency prek to v0.5.7 ([#105](https://github.com/rolehippie/apache/issues/105)) ([6055f16](https://github.com/rolehippie/apache/commit/6055f169fef4b565283673f082d9feffb9536911))
+* **mise:** update dependency prek to v0.5.9 ([#107](https://github.com/rolehippie/apache/issues/107)) ([f8b229f](https://github.com/rolehippie/apache/commit/f8b229fc976b4f6b81faeea7e2ff6c3fe01cd945))
+* **mise:** update node.js to v26 ([#106](https://github.com/rolehippie/apache/issues/106)) ([4df93bd](https://github.com/rolehippie/apache/commit/4df93bd6d2c0eaa53de8b18e411a8cf578773431))
+* **patch:** update dependency lusitaniae/apache_exporter to v1.1.2 ([#113](https://github.com/rolehippie/apache/issues/113)) ([6ae7ac1](https://github.com/rolehippie/apache/commit/6ae7ac16ca8b7cf40f1c34e5740483935e9d8b07))
+
 ## [5.8.0](https://github.com/rolehippie/apache/compare/v5.7.0...v5.8.0) (2026-10-12)
 
 ### Dependencies
